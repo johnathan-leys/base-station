@@ -25,7 +25,7 @@ print("Recording length: "+ str(time_sec/60) + " minutes or " + str(time_sec) + 
 plt.figure(figsize=(15, 9))
 
 # spectrogram for data with previouslt defined parameters
-plt.specgram(binary_data, NFFT=window_size, Fs=sample_rate, noverlap=overlap, cmap='viridis')
+plt.specgram(binary_data, NFFT=window_size, Fs=sample_rate, noverlap=overlap)
 
 plt.colorbar(label='Power (dB)')    # colorbar for Power representation
 
