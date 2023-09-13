@@ -33,5 +33,6 @@ plt.colorbar(label='Power (dB)')    # colorbar for Power representation
 plt.xlabel('Time (s)')
 plt.ylabel('Frequency (Hz)')
 plt.title('Time vs. Frequency with Power Representation')
-
+plt.savefig("spectrogramEx.png")
 plt.show()
+
