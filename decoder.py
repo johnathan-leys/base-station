@@ -22,7 +22,7 @@ time_sec = len(binary_data) / (sample_rate) # dtype=np.int16 should account for 
 print("Recording length: "+ str(time_sec/60) + " minutes or " + str(time_sec) + " seconds")
 
 # plot the stft
-plt.figure(figsize=(15, 9))
+plt.figure(figsize=(10, 6))
 
 # spectrogram for data with previouslt defined parameters
 plt.specgram(binary_data, NFFT=window_size, Fs=sample_rate, noverlap=overlap)
