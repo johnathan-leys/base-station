@@ -1,6 +1,6 @@
 #   This file is meant to test the decoder format/capabilities. It uses an example binary file
 # that we can check with and confirm the graph and other data looks corect. The script reads in the
-# binary file and performs a stft on the samples
+# binary file and performs a stft on the samples, then plots spectrogram
 
 import numpy as np                  # to receive data
 import matplotlib.pyplot as plt     # used for specgram plotting
