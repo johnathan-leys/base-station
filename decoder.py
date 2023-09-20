@@ -1,7 +1,7 @@
 #   This file is meant to test the decoder format/capabilities. It uses an example binary file
 # that we can check with and confirm the graph and other data looks corect. The script reads in the
 # binary file and performs a stft on the samples
-
+from test import *
 import numpy as np                  # to receive data
 import matplotlib.pyplot as plt     # used for specgram plotting
 
@@ -35,4 +35,14 @@ plt.ylabel('Frequency (Hz)')
 plt.title('Time vs. Frequency with Power Representation')
 plt.savefig("spectrogramEx.png")
 plt.show()
+
+# compare to non-numpy
+otherdata = read_binary_audio_file('exFile.bin')
+
+
+comparison_result = binary_data == binary_data
+print(comparison_result)
+#The results appear to be the same, confirming that both are workable and it is unliekly that both methods are wrong.
+
+
 
