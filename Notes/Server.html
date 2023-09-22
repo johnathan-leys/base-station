@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ED Server</title>
+    <meta name='viewport' content='user-scalable=yes,initial-scale=1.0,width=device-width'>
+    <style>
+      body {
+        max-width: 65%;
+        margin: 0 auto;
+        font-family: arial;
+        font-size: 100%;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        border-radius: 0em;
+        overflow: hidden;
+        background-color: #d90707;
+        font-size: 1em;
+      }
+
+      li {
+        float: left;
+        border-radius: 0em;
+        border-right: 0em solid #bbb;
+      }
+
+      li a {
+        color: white;
+        display: block;
+        border-radius: 0.375em;
+        padding: 0.44em 0.44em;
+        text-decoration: none;
+        font-size: 100%
+      }
+
+      li a:hover {
+        background-color: #e86b6b;
+        border-radius: 0em;
+        font-size: 100%
+      }
+
+      h1 {
+        color: white;
+        border-radius: 0em;
+        font-size: 1.5em;
+        padding: 0.2em 0.2em;
+        background: #d90707;
+      }
+
+      h2 {
+        color: blue;
+        font-size: 0.8em;
+      }
+
+      h3 {
+        font-size: 0.8em;
+      }
+
+      table {
+        font-family: arial, sans-serif;
+        font-size: 0.9em;
+        border-collapse: collapse;
+        width: 85%;
+      }
+
+      th,
+      td {
+        border: 0.06em solid #dddddd;
+        text-align: left;
+        padding: 0.3em;
+        border-bottom: 0.06em solid #dddddd;
+      }
+
+      tr:nth-child(odd) {
+        background-color: #eeeeee;
+      }
+
+      .rcorners_n {
+        border-radius: 0.5em;
+        background: #558ED5;
+        padding: 0.3em 0.3em;
+        width: 20%;
+        color: white;
+        font-size: 75%;
+      }
+
+      .rcorners_m {
+        border-radius: 0.5em;
+        background: #558ED5;
+        padding: 0.3em 0.3em;
+        width: 50%;
+        color: white;
+        font-size: 75%;
+      }
+
+      .rcorners_w {
+        border-radius: 0.5em;
+        background: #558ED5;
+        padding: 0.3em 0.3em;
+        width: 70%;
+        color: white;
+        font-size: 75%;
+      }
+
+      .column {
+        float: left;
+        width: 50%;
+        height: 45%;
+      }
+
+      .row:after {
+        content: '';
+        display: table;
+        clear: both;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      a {
+        font-size: 75%;
+      }
+
+      p {
+        font-size: 75%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>My Circuits</h1>
+    <ul>
+      <li>
+        <a href='/'>Files</a>
+      </li>
+      <li>
+        <a href='/upload'>Configuration</a>
+      </li>
+    </ul>
+    <table align='center'>
+      <tr>
+        <th>Name/Type</th>
+        <th style='width:20%'>Type File/Dir</th>
+        <th>File Size</th>
+      </tr>
+      <tr>
+        <td>Dir</td>
+        <td>System Volume Information</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>CONFIG.TXT</td>
+        <td>File</td>
+        <td>25 B</td>
+        <td>
+          <FORM action='/' method='post'>
+            <button type='submit' name='download'' value=' download_CONFIG.TXT'>Download</button>
+        </td>
+        <td>
+          <FORM action='/' method='post'>
+            <button type='submit' name='delete'' value=' delete_CONFIG.TXT'>Delete</button>
+        </td>
+      </tr>
+      <tr>
+        <td>01010000.bin</td>
+        <td>File</td>
+        <td>4.597 MB</td>
+        <td>
+          <FORM action='/' method='post'>
+            <button type='submit' name='download'' value=' download_01010000.bin'>Download</button>
+        </td>
+        <td>
+          <FORM action='/' method='post'>
+            <button type='submit' name='delete'' value=' delete_01010000.bin'>Delete</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Dir</td>
+        <td>Sample</td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>

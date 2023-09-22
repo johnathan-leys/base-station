@@ -43,7 +43,4 @@ otherdata = read_binary_audio_file('exFile.bin')
 
 comparison_result = binary_data == binary_data
 print(comparison_result)
-#The results appear to be the same, confirming that both are workable and it is unliekly that both methods are wrong.
-
-
-
+#The results appear to be the same, confirming that both are workable and it is unlikely that both methods are wrong.
