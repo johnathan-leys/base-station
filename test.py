@@ -40,7 +40,7 @@ def read_binary_audio_file(file_path):
 
 
 if __name__ == '__main__':
-    file_path = 'exFile.bin'
+    file_path = 'binary/exFile.bin'
     binary_audio_data = read_binary_audio_file(file_path)
     print(f"Number of samples: {len(binary_audio_data)}")
  

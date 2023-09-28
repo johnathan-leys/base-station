@@ -6,8 +6,10 @@ from test import *
 import numpy as np                  # to receive data
 import matplotlib.pyplot as plt     # used for specgram plotting
 
+filepath = 'binary/exFile.bin'
+
 # get the binary file, read into numpy array
-with open('exFile.bin', 'rb') as file:
+with open(filepath, 'rb') as file:
     binary_data = np.fromfile(file, dtype=np.int16)
 
 # sample/binary params
@@ -38,7 +40,7 @@ plt.savefig("spectrogramEx.png")
 plt.show()
 
 # compare to non-numpy
-otherdata = read_binary_audio_file('exFile.bin')
+otherdata = read_binary_audio_file(filepath)
 
 
 comparison_result = binary_data == binary_data
