@@ -1,6 +1,7 @@
 # This script should grab the data files from the ESP32 web server.
 
 import requests #needed to get the data
+import time
 
 
 # UPDATE THIS IF IP/etc CHANGES
@@ -21,10 +22,21 @@ for filename in files_to_download:
     file_url = "http://" + str(esp32_ip) + "/" + str(filename)
     # I think https part might be needed to specify protocol as esp32 is the AP...
 
+    # Record the start time for speed calc
+    start_time = time.time()
+
+
     # Send an HTTP GET request to download the file
     file_response = requests.get(file_url)
 
+    end_time = time.time() 
+
     if file_response.status_code == 200:    # "indicates that the request has succeeded"
+
+        # Calculate the file size/download speed
+        file_size = len(file_response.content)
+        download_time = end_time - start_time
+        download_speed = file_size / download_time
         
         local_filename = f'local_{filename}'
 
@@ -33,5 +45,6 @@ for filename in files_to_download:
             file.write(file_response.content)
         
         print("File " + str(filename) + " downloaded successfully")
+        print("Download Speed " + str(download_speed) + " bytes/sec")
     else:
         print("Failed to download file " + str(filename) + ". Status code: " + str(file_response.status_code))
