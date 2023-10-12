@@ -11,7 +11,7 @@ def connect_to_wifi(ssid, password):
         # subprocess.run(["nmcli", "device", "wifi", "connect", ssid, "password", password], check=True)
         # sudo apt-get install network-manager 
 
-        print(f"Connected to {ssid}")
+        print(f"Attempting conn to {ssid}")
     except subprocess.CalledProcessError as e:
         print(f"Failed to connect to {ssid}: {str(e)}")
         return False
@@ -37,9 +37,8 @@ def download_files(ip_address, file_names):
         except requests.RequestException as e:
             print(f"HTTP request failed: {str(e)}")
 
-# Example usage
 if __name__ == "__main__":
-    # Wi-Fi credentials
+    # Wi-Fi creds
     ssid = "Whale"
     password = "NARWWWWW"
     
@@ -47,7 +46,7 @@ if __name__ == "__main__":
     ip_address = "192.168.4.1"  
     
     # Names of the files to download
-    file_names = ["CONFIG.TXT", "01010000.bin"]  # change names
+    file_names = ['10061425.bin', '01010000.bin']  # change names
     
     # Connect to Wi-Fi
     if connect_to_wifi(ssid, password):
