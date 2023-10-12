@@ -5,7 +5,7 @@ import time
 
 
 # UPDATE THIS IF IP/etc CHANGES
-esp32_ip = '10.20.20.20'
+esp32_ip = '192.168.4.1'
 
 wifi_ssid = 'Whale'     # Going off of memory...
 with open('.password', 'r') as file:
@@ -13,7 +13,7 @@ with open('.password', 'r') as file:
 
 # List of filenames. Likely will need to dynamically update when fully ready. 
 # Could also use something like BeautifulSoup to scrape for all the files...
-files_to_download = ['CONFIG.TXT', '01010000.bin']  # right now only 2 file names
+files_to_download = ['10061425.bin', '01010000.bin']  # right now only 2 file names
 
 session = requests.Session()
 session.auth = (wifi_ssid, password)    # should connect to AP
@@ -38,7 +38,7 @@ for filename in files_to_download:
         download_time = end_time - start_time
         download_speed = file_size / download_time
         
-        local_filename = f'local_{filename}'
+        local_filename = f'local_{filename}' #append local_ to front
 
         # Write the content of the response to the local file
         with open(local_filename, 'wb') as file:
