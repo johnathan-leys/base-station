@@ -3,8 +3,7 @@
 import requests #needed to get the data
 import time
 
-
-# UPDATE THIS IF IP/etc CHANGES
+# IP address on the Whale network
 esp32_ip = '192.168.4.1'
 
 wifi_ssid = 'Whale'     # Going off of memory...
