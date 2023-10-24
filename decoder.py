@@ -6,7 +6,7 @@ from test import *
 import numpy as np                  # to receive data
 import matplotlib.pyplot as plt     # used for specgram plotting
 
-filepath = 'binary/exFile.bin'
+filepath = '3.bin'
 
 # get the binary file, read into numpy array
 with open(filepath, 'rb') as file:
