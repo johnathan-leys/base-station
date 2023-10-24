@@ -5,7 +5,7 @@ import subprocess
 # Connect to ESP32 Wi-Fi AP
 def connect_to_wifi(ssid, password):
     try:
-        # For Windows | It looks like this only works when previously connected to network, have pw saved
+        # For Windows | This only works when previously connected to network, have pw saved
         subprocess.run(["netsh", "wlan", "connect", f"name={ssid}"], check=True) #normally name is ssid
         # For linux using nmcli:
         # subprocess.run(["nmcli", "device", "wifi", "connect", ssid, "password", password], check=True)
@@ -26,11 +26,11 @@ def download_files(ip_address, file_names):
             data = {'download': f'download_{file_name}'}
             
             # Sending POST request to initiate download
-            response = requests.post(base_url, data=data) # I am seeing something about headers?
+            response = requests.post(base_url, data=data) 
             
             # Checking response status and writing file if successful
             if response.status_code == 200:
-                with open(file_name, 'wb') as f: #update to put in bin folder
+                with open("Binary/" + file_name, 'wb') as f: 
                     f.write(response.content)
                 print(f"File {file_name} downloaded successfully")
             else:
