@@ -2,12 +2,13 @@ import requests
 import time
 import subprocess
 
+# Likely will need to loop for a while trying until capsule is in range.
 # Connect to ESP32 Wi-Fi AP
 def connect_to_wifi(ssid, password):
     try:
         # For Windows | It looks like this only works when previously connected to network, have pw saved
         subprocess.run(["netsh", "wlan", "connect", f"name={ssid}"], check=True) #normally name is ssid
-        # For linux using nmcli:
+        # For linux using nmcli: Might need sudo
         # subprocess.run(["nmcli", "device", "wifi", "connect", ssid, "password", password], check=True)
         # sudo apt-get install network-manager 
 
