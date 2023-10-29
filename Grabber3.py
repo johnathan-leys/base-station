@@ -6,7 +6,7 @@ import subprocess
 # Connect to ESP32 Wi-Fi AP
 def connect_to_wifi(ssid, password):
     try:
-        # For Windows | It looks like this only works when previously connected to network, have pw saved
+        # For Windows | This only works when previously connected to network, have pw saved
         subprocess.run(["netsh", "wlan", "connect", f"name={ssid}"], check=True) #normally name is ssid
         # For linux using nmcli: Might need sudo
         # subprocess.run(["nmcli", "device", "wifi", "connect", ssid, "password", password], check=True)
@@ -22,15 +22,16 @@ def download_files(ip_address, file_names):
     base_url = f"http://{ip_address}"
     for file_name in file_names:
         try:
+            time.sleep(1)
             # Creating data for POST request
             data = {'download': f'download_{file_name}'}
             
             # Sending POST request to initiate download
-            response = requests.post(base_url, data=data)
+            response = requests.post(base_url, data=data) 
             
             # Checking response status and writing file if successful
             if response.status_code == 200:
-                with open(file_name, 'wb') as f:
+                with open("Binary/" + file_name, 'wb') as f: 
                     f.write(response.content)
                 print(f"File {file_name} downloaded successfully")
             else:
@@ -47,7 +48,7 @@ if __name__ == "__main__":
     ip_address = "192.168.4.1"  
     
     # Names of the files to download
-    file_names = ['10061425.bin', '01010000.bin']  # change names
+    file_names = ['1.bin', '2.bin', '3.bin', '4.bin', '5.bin']  # change names
     
     # Connect to Wi-Fi
     if connect_to_wifi(ssid, password):
