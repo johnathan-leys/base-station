@@ -1,11 +1,9 @@
-import librosa
-import librosa.display
 import numpy as np
 
-from bokeh.plotting import figure, show, output_file, curdoc
-from bokeh.models import ColorBar, LinearColorMapper, BasicTicker, ColumnDataSource, Range1d
-from bokeh.layouts import column
-from bokeh.io import push_notebook
+from bokeh.plotting import figure, show, output_file
+from bokeh.models import ColorBar, LinearColorMapper, BasicTicker
+
+from scipy.signal import stft
 
 
 def binary_to_numpy(filename):
@@ -22,12 +20,17 @@ def binary_to_numpy(filename):
 
 
 def compute_spectrogram_array(audio_data, sample_rate):
-    # Compute the short-time Fourier transform
-    D = librosa.stft(audio_data)
-    
+    # Compute the short-time Fourier transform using scipy
+    f, t, Zxx = stft(audio_data, fs=sample_rate, nperseg=1024) # Modify nperseg as needed
+    D = np.abs(Zxx)
+
     # Convert an amplitude spectrogram to dB-scaled spectrogram
-    spectrogram = librosa.amplitude_to_db(np.abs(D), ref=np.max)
-    
+    spectrogram = amplitude_to_db(D)
+    return spectrogram
+
+def amplitude_to_db(spectrogram):
+    # Avoid log of zero by adding a small number
+    spectrogram = 20 * np.log10(np.maximum(spectrogram, 1e-7))
     return spectrogram
 
 def display_interactive_spectrogram(spectrogram, sample_rate):
