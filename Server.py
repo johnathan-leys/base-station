@@ -56,6 +56,7 @@ def display_interactive_spectrogram(spectrogram, sample_rate):
     output_file("interactive_spectrogram.html")
     show(p, notebook_handle=True)
 
-audio_data = binary_to_numpy('Binary/combined.bin')
+#audio_data = binary_to_numpy('Binary/combined.bin')
+audio_data = binary_to_numpy('Combined/combined.bin')
 spectrogram = compute_spectrogram_array(audio_data, 5000)  # 5 kHz sample rate
 display_interactive_spectrogram(spectrogram, 5000)

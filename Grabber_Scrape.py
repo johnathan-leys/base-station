@@ -2,6 +2,7 @@ import requests
 import time
 import subprocess
 from bs4 import BeautifulSoup
+import sys
 
 # Connect to ESP32 Wi-Fi AP
 def connect_to_wifi(ssid, password):
@@ -57,7 +58,7 @@ if __name__ == "__main__":
         server_html_content = response.text
     except requests.RequestException as e:
         print(f"Failed to fetch Server.html content: {str(e)}")
-        exit()
+        sys.exit(1) # should count as failture for bash script
     
     # Extract file names from the Server.html content
     file_names = extract_file_names(server_html_content)
