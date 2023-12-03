@@ -3,6 +3,8 @@
 # Navigate to the directory where scripts are
 cd /home/capstone # I think this is right? dont have pi rn
 
+#   TODO add line to enable gpio/chargin for capsule
+
 # Run grabber until it succeeds
 until python Grabber_Scrape.py; do
     echo "Grabber failed, retrying..."
