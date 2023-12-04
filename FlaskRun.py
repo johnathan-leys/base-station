@@ -10,6 +10,6 @@ def index():
     return render_template_string(content)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=False)
 
 # Seems to work. Def need to optimize/learn more about web stuff to load faster.
