@@ -22,3 +22,4 @@ python Server.py
 python FlaskRun.py
 
 raspi-gpio set 24 op dh  # turn on "ready" LED
+raspi-gpio set 23 op dl 
