@@ -2,6 +2,7 @@
 
 # Navigate to the directory where scripts are
 cd /home/capstone # I think this is right? dont have pi rn
+raspi-gpio set 24 op dl 
 
 raspi-gpio set 5 op dh  # turn on charging
 
