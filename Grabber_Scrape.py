@@ -51,19 +51,22 @@ if __name__ == "__main__":
     ssid = "Whale"
     password = "NARWWWWW"
     ip_address = "192.168.4.1"
-    
-    # Fetch the Server.html content using an HTTP request
-    try:
-        response = requests.get(f"http://{ip_address}")
-        server_html_content = response.text
-    except requests.RequestException as e:
-        print(f"Failed to fetch Server.html content: {str(e)}")
-        sys.exit(1) # should count as failture for bash script
-    
-    # Extract file names from the Server.html content
-    file_names = extract_file_names(server_html_content)
-    
-    # Connect to Wi-Fi
+
+     # Connect to Wi-Fi
     if connect_to_wifi(ssid, password):
+            # Fetch the Server.html content using an HTTP request
+        try:
+            response = requests.get(f"http://{ip_address}")
+            server_html_content = response.text
+        except requests.RequestException as e:
+            print(f"Failed to fetch Server.html content: {str(e)}")
+            sys.exit(1) # should count as failture for bash script
+        
+        # Extract file names from the Server.html content
+        file_names = extract_file_names(server_html_content)
         time.sleep(5)
         download_files(ip_address, file_names)
+    
+   
+    
+   
