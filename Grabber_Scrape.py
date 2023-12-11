@@ -9,9 +9,9 @@ def connect_to_wifi(ssid, password):
     try:
         # For Windows | This only works when previously connected to network, have pw saved
         # subprocess.run(["netsh", "wlan", "connect", f"name={ssid}"], check=True) #normally name is ssid
-        # For linux using nmcli: Might need sudo
+        # For linux using nmcli:
         subprocess.run(["nmcli", "device", "wifi", "connect", ssid, "password", password], check=True)
-        # sudo apt-get install network-manager 
+        # sudo apt-get install network-manager  
 
         print(f"Attempting conn to {ssid}")
     except subprocess.CalledProcessError as e:
@@ -60,7 +60,7 @@ if __name__ == "__main__":
             server_html_content = response.text
         except requests.RequestException as e:
             print(f"Failed to fetch Server.html content: {str(e)}")
-            sys.exit(1) # should count as failture for bash script
+            sys.exit(1) # Should count as failture for bash script
         
         # Extract file names from the Server.html content
         file_names = extract_file_names(server_html_content)
