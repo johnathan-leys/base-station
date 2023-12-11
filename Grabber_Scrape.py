@@ -8,9 +8,9 @@ import sys
 def connect_to_wifi(ssid, password):
     try:
         # For Windows | This only works when previously connected to network, have pw saved
-        subprocess.run(["netsh", "wlan", "connect", f"name={ssid}"], check=True) #normally name is ssid
+        # subprocess.run(["netsh", "wlan", "connect", f"name={ssid}"], check=True) #normally name is ssid
         # For linux using nmcli: Might need sudo
-        # subprocess.run(["nmcli", "device", "wifi", "connect", ssid, "password", password], check=True)
+        subprocess.run(["nmcli", "device", "wifi", "connect", ssid, "password", password], check=True)
         # sudo apt-get install network-manager 
 
         print(f"Attempting conn to {ssid}")
