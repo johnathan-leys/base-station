@@ -22,7 +22,7 @@ python Combine_Binary2.py
 export BOKEH_BROWSER=/usr/bin/chromium-browser    # When using pi with display, opens in browser
 
 python Server.py
-python FlaskRun.py
+python FlaskRun.py &
 
 raspi-gpio set 24 op dh  # turn on "ready" LED
 raspi-gpio set 23 op dl 
