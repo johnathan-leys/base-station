@@ -45,7 +45,7 @@ def display_interactive_spectrogram(spectrogram, sample_rate):
     # Create a color mapper
     color_mapper = LinearColorMapper(palette="Viridis256", low=spectrogram.min(), high=spectrogram.max())
     
-    # Display image (i.e., spectrogram)
+    # Display image
     p.image(image=[spectrogram], x=time[0], y=freq[0], dw=time[-1], dh=freq[-1], color_mapper=color_mapper)
 
     # Set up color bar
