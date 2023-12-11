@@ -14,7 +14,7 @@ def binary_to_numpy(filename):
     # Convert to numpy array
     audio_data = np.frombuffer(data, dtype=np.int16)
     
-    # Normalize to float in range [-1, 1] for librosa
+    # Normalize to float in range [-1, 1]
     audio_data = audio_data.astype(np.float32) / np.iinfo(np.int16).max
     return audio_data
 
