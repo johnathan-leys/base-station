@@ -21,6 +21,7 @@ def binary_to_numpy(filename):
 
 def compute_spectrogram_array(audio_data, sample_rate):
     # Compute the short-time Fourier transform using scipy
+    # Zxx is stft, matrix of amplitude, phase according to f, t
     f, t, Zxx = stft(audio_data, fs=sample_rate, nperseg=1024) # Modify nperseg, but 1024 should work
     D = np.abs(Zxx)
 
