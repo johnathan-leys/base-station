@@ -5,7 +5,7 @@ Working alongside UMaine Marine Science department to develop a base station tha
 
 Uses various Python libraries to pull data from ESP32 (hydrophone's web server) and combine and display the data.
 
-A Raspberry Pi HAT PCB is providing power to the Pi and wirelessly charging the hydrophone capsule. The pi can determine when to start/stop charging the capsule based on battery level.
+A custom built/designed Raspberry Pi HAT PCB is providing power to the Pi and wirelessly charging the hydrophone capsule. The pi can determine when to start/stop charging the capsule based on battery level.
 
 A bash script is responsible for running the needed python scripts in the correct order/time
 
