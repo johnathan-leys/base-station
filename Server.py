@@ -24,7 +24,7 @@ def compute_spectrogram_array(audio_data, sample_rate):
     f, t, Zxx = stft(audio_data, fs=sample_rate, nperseg=1024) # Modify nperseg, but 1024 should work
     D = np.abs(Zxx)
 
-    # Convert an amplitude spectrogram to dB-scaled spectrogram
+    # Convert amplitude spectrogram to dB
     spectrogram = amplitude_to_db(D)
     return spectrogram
 
