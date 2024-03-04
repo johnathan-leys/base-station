@@ -8,7 +8,7 @@ app = Flask(__name__)    # __name__ = name of current module
 # Used to specify URL route where index() should be triggered: if url is "/" (root url of web app) call index().
 # Decorator, tells Flask to associate "index" function with url '/'. When request is made to '/', function is invoked
 @app.route('/')    # '/' is usually default from browser
-def index():        # Funtion reads,renders spectrogam file
+def index():        # Function reads,renders spectrogram file
     with open("interactive_spectrogram.html", 'r') as f:
         content = f.read()
     return render_template_string(content)
