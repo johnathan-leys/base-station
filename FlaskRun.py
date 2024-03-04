@@ -4,6 +4,8 @@ from flask import Flask, render_template_string
 # Create instance "app" of the Flask class
 app = Flask(__name__)    # __name__ = name of current module
 
+# Decorator: Modifies function, implemented as functions which take other function as input. Usually add functions such as logging, modifying input...
+# Used to specify URL route where index() should be triggered: if url is "/" (root url of web app) call index().
 # Decorator, tells Flask to associate "index" function with url '/'. When request is made to '/', function is invoked
 @app.route('/')    # '/' is usually default from browser
 def index():        # Funtion reads,renders spectrogam file
