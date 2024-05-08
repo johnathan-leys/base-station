@@ -48,8 +48,8 @@ def extract_file_names(html_content):
     return file_names
 
 if __name__ == "__main__":
-    ssid = "Whale"
-    password = "NARWWWWW"
+    ssid = "ssid"
+    password = "PASS"
     ip_address = "192.168.4.1"
 
      # Connect to Wi-Fi
