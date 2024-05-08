@@ -48,5 +48,4 @@ def download_files(ip_address, file_names):
     else:
         print("No files were successfully downloaded.")
 
-# Example usage
-download_files("192.168.1.1", ["file1.zip", "file2.zip"])
+
